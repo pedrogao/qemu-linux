@@ -1,0 +1,6 @@
+#!/bin/busybox sh
+echo "{==DBG==} INIT SCRIPT"
+mount -t proc none /proc
+mount -t sysfs none /sys
+echo -e "{==DBG==} Boot took $(cut -d' ' -f1 /proc/uptime) seconds"
+exec /sbin/init
